@@ -9,7 +9,12 @@ return {
 			sources = {
 				require("none-ls.diagnostics.eslint_d"),
 				null_ls.builtins.formatting.stylua,
-				null_ls.builtins.diagnostics.djlint,
+				null_ls.builtins.diagnostics.djlint.with({
+                    filetypes = { "htmldjango" },
+                }),
+                null_ls.builtins.formatting.djlint.with({
+                    filetypes = { "htmldjango" },
+                }),
 				-- null_ls.builtins.diagnostics.pylint,
 				null_ls.builtins.formatting.isort,
 				null_ls.builtins.formatting.black,
